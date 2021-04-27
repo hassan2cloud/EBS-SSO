@@ -1,0 +1,15 @@
+txkrun.pl -script=SetOAMReg -deregisteroam=yes -ebsProfileLevel=Site
+http://fmlobliammt01.afsfmlob.local:7001
+#weblogic_idm - fmlobwlsidm1
+#stop apache
+#stopall
+
+#start admin
+#$ perl $AD_TOP/patch/115/bin/adProvisionEBS.pl \
+#ebs-delete-managedserver \
+#-contextfile=$CONTEXT_FILE -managedsrvname=oaea_server1
+
+#$ perl $FND_TOP/patch/115/bin/txkSetAppsConf.pl \
+#-contextfile=$CONTEXT_FILE \
+#-configoption=removeMS \
+#-accessgate=fmloblebsmt01.afsfmlob.local:6801
